@@ -1,0 +1,130 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#container {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+}
+
+#CreateComment {
+}
+
+.contenedor{
+  margin-top: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+}
+.columna{
+  flex-grow: 10;
+}
+.columna2{
+  margin-left: 10%;
+}
+.table-description {
+  display: table;
+  width: 50%;
+  margin-bottom: 1.5%;
+  margin-left: 10%;
+  float: right;
+}
+
+.issue-title {
+  font-size: 1.71428571em;
+  font-style: inherit;
+  font-weight: 500;
+  letter-spacing: -.01em;
+  line-height: 1.16666667;
+  margin-top: 28px;
+  color: #172B4D;
+}
+
+.label-list {
+  font-weight: bolder;
+}
+
+.link-list {
+  color: #0052CC;
+}
+
+.link-list:hover {
+  color: #3572b0;
+  text-decoration: underline;
+}
+
+.border {
+  margin-top: 3%;
+  border-radius: 20px 20px 20px 20px;
+  -moz-border-radius: 20px 20px 20px 20px;
+  -webkit-border-radius: 20px 20px 20px 20px;
+  border: 1px solid #0052CC;
+  display: inline-block;
+}
+
+.section-title {
+  font-size: 25px;
+  margin: 0 0 1%;
+  font-weight: bolder;
+  line-height: 1.5;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 5%;
+}
+
+form {
+  display: block;
+  margin-top: 30px;
+  position: relative;
+}
+
+.input-group {
+  box-sizing: border-box;
+  clear: both;
+  padding: 4px 0 4px 145px;
+  position: relative;
+  margin: 2px 0;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+#bootstrap-overrides label {
+  font-weight: lighter;
+}
+textarea {
+  height: 192px;
+}
+
+.cancel {
+  padding: 5px 10px;
+}
+
+.cancel:hover {
+  background-color: #FFF;
+  text-decoration: underline;
+  color: blue;
+}
+
+.back-button {
+  padding-top: 10px;
+}
+
+.errors li {
+  color: #f00;
+}
+
+.actions {
+  margin-top: 10px;
+}
