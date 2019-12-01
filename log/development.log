@@ -2982,3 +2982,272 @@ Processing by IssuesController#index as HTML
 Completed 200 OK in 80ms (Views: 67.5ms | ActiveRecord: 2.7ms | Allocations: 37687)
 
 
+Started GET "/" for ::1 at 2019-12-01 15:37:23 +0100
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.5ms | Allocations: 416)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 283ms (Views: 264.0ms | ActiveRecord: 1.0ms | Allocations: 52834)
+
+
+Started GET "/issues" for ::1 at 2019-12-01 15:37:27 +0100
+Processing by IssuesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering issues/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "issues"[0m
+  ↳ app/views/issues/index.html.erb:62
+  [1m[36mIssue Load (0.2ms)[0m  [1m[34mSELECT "issues".* FROM "issues"[0m
+  ↳ app/views/issues/index.html.erb:77
+  [1m[36mWatcher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 10], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  [1m[36mWatcher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 11], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  [1m[36mWatcher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 12], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:85
+  [1m[36mWatcher Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 13], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:85
+  [1m[36mWatcher Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 14], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  [1m[36mWatcher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 15], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:85
+  [1m[36mWatcher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 16], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  Rendered issues/index.html.erb within layouts/application (Duration: 76.7ms | Allocations: 27244)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 127ms (Views: 102.9ms | ActiveRecord: 3.2ms | Allocations: 40624)
+
+
+Started DELETE "/issues/13" for ::1 at 2019-12-01 15:37:34 +0100
+Processing by IssuesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"D52oVSIXAesa8V0xQodbqntbI9yGtXX8DIjI8cpsRxhWZ6uu5yRsq4Hx/nMPMRL+gQLgITYETP/yoD2GOg+40w==", "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mIssue Load (0.4ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/issues_controller.rb:174:in `set_issue'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/comment.rb:6:in `block in <class:Comment>'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."issue_id" = ? ORDER BY "comments"."created_at" ASC[0m  [["issue_id", 13]]
+  ↳ app/controllers/issues_controller.rb:164:in `destroy'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."issue_id" = ?[0m  [["issue_id", 13]]
+  ↳ app/controllers/issues_controller.rb:164:in `destroy'
+  [1m[36mWatcher Load (0.1ms)[0m  [1m[34mSELECT "watchers".* FROM "watchers" WHERE "watchers"."issue_id" = ?[0m  [["issue_id", 13]]
+  ↳ app/controllers/issues_controller.rb:164:in `destroy'
+  [1m[36mIssue Destroy (0.2ms)[0m  [1m[31mDELETE FROM "issues" WHERE "issues"."id" = ?[0m  [["id", 13]]
+  ↳ app/controllers/issues_controller.rb:164:in `destroy'
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/issues_controller.rb:164:in `destroy'
+Redirected to http://localhost:3000/issues
+Completed 302 Found in 69ms (ActiveRecord: 8.0ms | Allocations: 14412)
+
+
+Started GET "/issues" for ::1 at 2019-12-01 15:37:34 +0100
+Processing by IssuesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering issues/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "issues"[0m
+  ↳ app/views/issues/index.html.erb:62
+  [1m[36mIssue Load (0.2ms)[0m  [1m[34mSELECT "issues".* FROM "issues"[0m
+  ↳ app/views/issues/index.html.erb:77
+  [1m[36mWatcher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 10], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  [1m[36mWatcher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 11], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  [1m[36mWatcher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 12], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:85
+  [1m[36mWatcher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 14], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  [1m[36mWatcher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 15], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:85
+  [1m[36mWatcher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 16], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  Rendered issues/index.html.erb within layouts/application (Duration: 21.0ms | Allocations: 10496)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 29.3ms | ActiveRecord: 1.8ms | Allocations: 18980)
+
+
+Started DELETE "/issues/14" for ::1 at 2019-12-01 15:37:39 +0100
+Processing by IssuesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"v5kZSjbQakamuPtGMeZRQXe70+6N6/1+2JEV4dlsvJ/mYxqx8+MHBj24WAR8UBgVjeIQEz1axH0mueCWKQ9DVA==", "id"=>"14"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mIssue Load (0.3ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/issues_controller.rb:174:in `set_issue'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/issues_controller.rb:164:in `destroy'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."issue_id" = ? ORDER BY "comments"."created_at" ASC[0m  [["issue_id", 14]]
+  ↳ app/controllers/issues_controller.rb:164:in `destroy'
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."issue_id" = ?[0m  [["issue_id", 14]]
+  ↳ app/controllers/issues_controller.rb:164:in `destroy'
+  [1m[36mWatcher Load (0.1ms)[0m  [1m[34mSELECT "watchers".* FROM "watchers" WHERE "watchers"."issue_id" = ?[0m  [["issue_id", 14]]
+  ↳ app/controllers/issues_controller.rb:164:in `destroy'
+  [1m[36mIssue Destroy (0.3ms)[0m  [1m[31mDELETE FROM "issues" WHERE "issues"."id" = ?[0m  [["id", 14]]
+  ↳ app/controllers/issues_controller.rb:164:in `destroy'
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/issues_controller.rb:164:in `destroy'
+Redirected to http://localhost:3000/issues
+Completed 302 Found in 37ms (ActiveRecord: 14.2ms | Allocations: 6843)
+
+
+Started GET "/issues" for ::1 at 2019-12-01 15:37:39 +0100
+Processing by IssuesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering issues/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "issues"[0m
+  ↳ app/views/issues/index.html.erb:62
+  [1m[36mIssue Load (0.2ms)[0m  [1m[34mSELECT "issues".* FROM "issues"[0m
+  ↳ app/views/issues/index.html.erb:77
+  [1m[36mWatcher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 10], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  [1m[36mWatcher Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 11], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  [1m[36mWatcher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 12], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  [1m[36mWatcher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 15], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:85
+  [1m[36mWatcher Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 16], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  Rendered issues/index.html.erb within layouts/application (Duration: 33.4ms | Allocations: 8697)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 58ms (Views: 52.8ms | ActiveRecord: 1.6ms | Allocations: 17174)
+
+
+Started GET "/" for ::1 at 2019-12-01 16:26:40 +0100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 278)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 74ms (Views: 63.4ms | ActiveRecord: 0.7ms | Allocations: 31773)
+
+
+Started GET "/issues" for ::1 at 2019-12-01 16:26:43 +0100
+Processing by IssuesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering issues/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "issues"[0m
+  ↳ app/views/issues/index.html.erb:62
+  [1m[36mIssue Load (1.1ms)[0m  [1m[34mSELECT "issues".* FROM "issues"[0m
+  ↳ app/views/issues/index.html.erb:77
+  [1m[36mWatcher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 10], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  [1m[36mWatcher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 11], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  [1m[36mWatcher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 12], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  [1m[36mWatcher Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 15], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:85
+  [1m[36mWatcher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 16], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  Rendered issues/index.html.erb within layouts/application (Duration: 47.9ms | Allocations: 21737)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 72ms (Views: 54.6ms | ActiveRecord: 4.4ms | Allocations: 34272)
+
+
+Started GET "/issues?status=New%26Open" for ::1 at 2019-12-01 16:26:46 +0100
+Processing by IssuesController#index as HTML
+  Parameters: {"status"=>"New&Open"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering issues/index.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "issues" WHERE "issues"."Status" IN (?, ?)[0m  [["Status", "Open"], ["Status", "New"]]
+  ↳ app/views/issues/index.html.erb:62
+  [1m[36mIssue Load (0.6ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."Status" IN (?, ?)[0m  [["Status", "Open"], ["Status", "New"]]
+  ↳ app/views/issues/index.html.erb:77
+  [1m[36mWatcher Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 10], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  [1m[36mWatcher Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 11], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  [1m[36mWatcher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 12], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  Rendered issues/index.html.erb within layouts/application (Duration: 29.3ms | Allocations: 5875)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 49ms (Views: 41.2ms | ActiveRecord: 2.6ms | Allocations: 14427)
+
+
+Started GET "/issues?status=New%26Open" for ::1 at 2019-12-01 16:26:46 +0100
+Processing by IssuesController#index as HTML
+  Parameters: {"status"=>"New&Open"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering issues/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "issues" WHERE "issues"."Status" IN (?, ?)[0m  [["Status", "Open"], ["Status", "New"]]
+  ↳ app/views/issues/index.html.erb:62
+  [1m[36mIssue Load (0.3ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."Status" IN (?, ?)[0m  [["Status", "Open"], ["Status", "New"]]
+  ↳ app/views/issues/index.html.erb:77
+  [1m[36mWatcher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 10], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  [1m[36mWatcher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 11], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  [1m[36mWatcher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 12], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/index.html.erb:93
+  Rendered issues/index.html.erb within layouts/application (Duration: 30.8ms | Allocations: 5861)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 66ms (Views: 54.2ms | ActiveRecord: 1.6ms | Allocations: 14409)
+
+
+Started GET "/issues/10" for ::1 at 2019-12-01 16:26:48 +0100
+Processing by IssuesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mIssue Load (0.5ms)[0m  [1m[34mSELECT "issues".* FROM "issues" WHERE "issues"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/issues_controller.rb:174:in `set_issue'
+  Rendering issues/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/issues/show.html.erb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."issue_id" = ?[0m  [["issue_id", 10]]
+  ↳ app/views/issues/show.html.erb:17
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."issue_id" = ? ORDER BY "comments"."created_at" ASC[0m  [["issue_id", 10]]
+  ↳ app/views/issues/show.html.erb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/issues/show.html.erb:23
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/issues/show.html.erb:23
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/issues/show.html.erb:23
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/issues/show.html.erb:23
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/issues/show.html.erb:23
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/issues/show.html.erb:23
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/issues/show.html.erb:23
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/issues/show.html.erb:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."issue_id" = ?[0m  [["issue_id", 10]]
+  ↳ app/views/issues/show.html.erb:131
+  [1m[36mVote Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "votes" WHERE "votes"."issue_id" = ? AND "votes"."user_id" = ? LIMIT ?[0m  [["issue_id", 10], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/show.html.erb:132
+  [1m[36mWatcher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "watchers" WHERE "watchers"."issue_id" = ? AND "watchers"."user_id" = ? LIMIT ?[0m  [["issue_id", 10], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/issues/show.html.erb:142
+  Rendered issues/show.html.erb within layouts/application (Duration: 103.5ms | Allocations: 22753)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 127ms (Views: 110.0ms | ActiveRecord: 3.8ms | Allocations: 31829)
+
+

@@ -24,8 +24,4 @@ Rails.application.routes.draw do
 
   put '/issues' => 'application#set_current_user', as: :log
 
-
-
- 
-
 end
