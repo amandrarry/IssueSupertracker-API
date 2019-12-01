@@ -58,7 +58,7 @@ GEM
       zeitwerk (~> 2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    autoprefixer-rails (9.7.2)
+    autoprefixer-rails (9.7.3)
       execjs
     bindex (0.8.1)
     bootsnap (1.4.5)
@@ -81,9 +81,9 @@ GEM
     crass (1.0.5)
     erubi (1.9.0)
     execjs (2.7.0)
-    faraday (0.17.0)
+    faraday (0.17.1)
       multipart-post (>= 1.2, < 3)
-    ffi (1.11.2)
+    ffi (1.11.3)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     hashie (3.6.0)
@@ -96,7 +96,7 @@ GEM
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
       ruby_dep (~> 1.2)
-    loofah (2.3.1)
+    loofah (2.4.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -136,6 +136,7 @@ GEM
     puma (4.3.0)
       nio4r (~> 2.0)
     rack (2.0.7)
+    rack-cors (0.3.1)
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -229,7 +230,7 @@ GEM
     websocket-extensions (0.1.4)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.2.1)
+    zeitwerk (2.2.2)
 
 PLATFORMS
   ruby
@@ -244,6 +245,7 @@ DEPENDENCIES
   omniauth-google-oauth2
   pg (= 1.1.4)
   puma (~> 4.1)
+  rack-cors (~> 0.3.1)
   rails (~> 6.0.1)
   sass-rails (>= 6)
   selenium-webdriver
