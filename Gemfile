@@ -66,3 +66,6 @@ gem 'omniauth-google-oauth2'
 
 
 gem 'bootstrap-sass', '3.3.7'
+
+# Gem for attachments 
+gem "aws-sdk-s3", require: false
