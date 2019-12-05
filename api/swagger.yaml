@@ -22,12 +22,12 @@ security:
   - APIKeyHeader: []
 
 paths:
-  /issues:issuesupertracker.herokuapp.com
+  /issues:
     x-swagger-router-controller: issues_controller
     get:
       tags:
         - Issues
-      summary: Consulta de issues
+      summary: Consulta de todos los issues
       description: Devuelve todos los issues de la DB.
       produces:
         - application/json
@@ -91,8 +91,8 @@ paths:
     post:
       tags:
         - Issues
-      summary: Crea Issue.
-      description: Crea un nuevo Issue.
+      summary: Crea issue
+      description: Crea un nuevo issue.
       consumes:
         - application/x-www-form-urlencoded
       parameters:
@@ -462,8 +462,8 @@ paths:
     post:
       tags:
         - Votes
-      summary: Vota o anula la votacion
-      description: Vota o anula la votacion del issue identificado por el id con el usuario identificado
+      summary: Vote/Unvote
+      description: Vota (si no estaba hecho) o anula la votación (si sí) del issue identificado por el id con el usuario identificado.
       parameters:
         - in: path
           name: issue_id
@@ -486,8 +486,8 @@ paths:
     post:
       tags:
         - Watchers
-      summary: observador o no observador
-      description: marca como observador o como no observador del issue identificado por el id con el usuario identificado
+      summary: Watch/Unwatch
+      description: Marca como observador (si no estaba marcado) o como no observador (si lo estaba) del issue identificado por el id con el usuario identificado.
       parameters:
         - in: path
           name: issue_id
@@ -508,8 +508,8 @@ paths:
     get:
       tags:
         - Attachments
-      summary: Obtiene un attachment.
-      description: Obtiene un attachment asociado a un Issue concreto.
+      summary: Obtiene un attachment
+      description: Obtiene un attachment asociado a un issue concreto.
       produces:
         - application/json
       parameters:
@@ -530,7 +530,7 @@ paths:
     post:
       tags:
         - Attachments
-      summary: Adjunta un archivo a un Issue.
+      summary: Adjunta archivo
       description: Adjunta un archivo a un Issue.
       produces:
         - application/json
@@ -569,7 +569,7 @@ paths:
     get:
       tags:
         - Attachments
-      summary: Obtiene un attachment de un comentario.
+      summary: Obtiene un attachment
       description: Obtiene un attachment de un comentario concreto.
       produces:
         - application/json
@@ -596,7 +596,7 @@ paths:
     post:
       tags:
         - Attachments
-      summary: Adjunta un attachment a un comentario.
+      summary: Adjunta un attachment
       description: Adjunta un attachment a un comentario concreto.
       produces:
         - application/json
