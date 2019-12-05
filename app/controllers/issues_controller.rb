@@ -1,7 +1,7 @@
 class IssuesController < ApplicationController
   before_action :set_current_user
   before_action :set_issue, only: [:show, :edit, :update, :destroy]
-  helper_method :sort_column, :sort_direction
+  helper_method :sort_column, :sort_direction, :delete_attachment
   
   # GET /issues
   # GET /issues.json
@@ -168,6 +168,12 @@ class IssuesController < ApplicationController
     end
   end
 
+  def delete_attachment
+    if @issue.Attachments.attached? 
+       @issue.Attachments.purge 
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_issue
@@ -184,6 +190,6 @@ class IssuesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def issue_params
-      params.require(:issue).permit(:Title, :Description, :Type, :Priority, :Status, :assignee_id, :attachment)
+      params.require(:issue).permit(:Title, :Description, :Type, :Priority, :Status, :assignee_id, :Attachments)
     end
 end
