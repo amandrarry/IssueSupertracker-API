@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks'} 
+  #get '/users/current_user' => "users#the_current_user", as: :current_user
+  #devise_scope :users do
+   # delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  #end
   get 'static_pages/home'
   get 'static_pages/help'
   resources :users

@@ -1,7 +1,7 @@
 class IssuesController < ApplicationController
-  before_action :set_current_user
   before_action :set_issue, only: [:show, :edit, :update, :destroy]
   helper_method :sort_column, :sort_direction
+  before_action :authenticate_user!
   
   # GET /issues
   # GET /issues.json
@@ -171,7 +171,8 @@ class IssuesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_issue
-      @issue = Issue.find(params[:id])
+      @issue = Issue.find_by(id: params[:id])
+      render json: {error: 'Issue not found'}, status: :not_found if @issue.nil?
     end
 
     def sort_column
