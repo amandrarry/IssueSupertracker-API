@@ -8,8 +8,8 @@ class ApplicationController < ActionController::Base
 
   def set_current_user
   	if User.find(1)
-      @user = User.find(1)
-      @current_user = @user
+     @user = User.find(1)
+     @current_user = @user
     end
   end
 

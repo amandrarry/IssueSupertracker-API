@@ -5,6 +5,7 @@ ruby '2.6.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.1'
+gem 'pg', '1.1.4'
 
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
@@ -24,6 +25,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+gem 'activerecord-session_store'
 #CORS
 gem 'rack-cors', '~> 0.3.1'
 
@@ -62,6 +64,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #Google login
+gem 'devise'
 gem 'omniauth-google-oauth2'
 
 
