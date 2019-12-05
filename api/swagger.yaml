@@ -2,7 +2,7 @@ swagger: '2.0'
 info:
   version: 0.0.1
   title: IssueSupertracker API
-host: 'localhost:3000'
+host: 'issuesupertracker.herokuapp.com'
 basePath: /
 schemes:
   - http
@@ -22,20 +22,19 @@ security:
   - APIKeyHeader: []
 
 paths:
-  /issues:
+  /issues:issuesupertracker.herokuapp.com
     x-swagger-router-controller: issues_controller
-    
     get:
       tags:
         - Issues
-      summary: Consultar issues 
-      description: devuelve todos los Issues
+      summary: Consulta de issues
+      description: Devuelve todos los issues de la DB.
       produces:
         - application/json
       parameters:
         - in: query
           name: type
-          description: Obtiene los issues de un tipo
+          description: Obtiene los issues de un tipo concreto.
           required: false
           type: string
           enum:
@@ -45,18 +44,18 @@ paths:
             - Task
         - in: query
           name: priority
-          description: Obtiene los issues de una prioridad
+          description: Obtiene los issues de una prioridad concreta.
           required: false
           type: string
           enum:
             - Trivial
-            - Minor
+            - Minorissuesupertracker.herokuapp.com
             - Major
             - Critical
             - Blocker
         - in: query
           name: status
-          description: Obtiene los issues de un estado
+          description: Obtiene los issues de un estado concreto.
           required: false
           type: string
           enum:
@@ -70,12 +69,12 @@ paths:
             - Closed
         - in: query
           name: assignee
-          description: Obtiene los issues asignados a un usuario
+          description: Obtiene los issues asignados a un usuario concreto.
           required: false
           type: integer
         - in: query
           name: watcher
-          description: Obtiene los issues visto por un usuario
+          description: Obtiene los issues visto por un usuario concreto.
           required: false
           type: integer
       responses:
@@ -92,8 +91,8 @@ paths:
     post:
       tags:
         - Issues
-      summary: Crear issue 
-      description: Crea un nuevo issue
+      summary: Crea Issue.
+      description: Crea un nuevo Issue.
       consumes:
         - application/x-www-form-urlencoded
       parameters:
@@ -164,8 +163,8 @@ paths:
     get:
       tags:
         - Issues/id
-      summary: Consultar issue 
-      description: Obtiene un issue por id
+      summary: Consulta issue concreto
+      description: Obtiene un issue indicando su ID concreta.
       produces:
         - application/json
       parameters:
@@ -183,11 +182,12 @@ paths:
           $ref: '#/responses/UnauthorizedError'
         '404':
           $ref: '#/responses/NotFound'
+
     delete:
       tags:
         - Issues/id
-      summary: Eliminar issue 
-      description: Elimina el issues con el id pasado por parametro
+      summary: Elimina issue
+      description: Elimina el issues con el id concretado.
       produces:
         - application/json
       parameters:
@@ -208,11 +208,12 @@ paths:
           $ref: '#/responses/UnauthorizedError'
         '404':
           $ref: '#/responses/NotFound'
+
     put:
       tags:
         - Issues/id
-      summary: Actualizar issue
-      description: Actualiza el issue con el id pasado por parametro
+      summary: Actualiza issue
+      description: Actualiza el issue con el id concretado.
       consumes:
         - application/x-www-form-urlencoded
       produces:
@@ -296,8 +297,8 @@ paths:
     get:
       tags:
         - Comments
-      summary: Consultar todos los comentarios de un issue
-      description: Devuelve todos los comentarios de un issue
+      summary: Consulta todos los comentarios de un issue
+      description: Devuelve todos los comentarios de un issue concreto cuya ID se ha indicado.
       produces:
         - application/json
       parameters:
@@ -318,11 +319,12 @@ paths:
           $ref: '#/responses/UnauthorizedError'
         '404':
           $ref: '#/responses/NotFound'
+
     post:
       tags:
         - Comments
       summary: Crea un comentario en un issue
-      description: Crea un comentario en un issue
+      description: Crea un comentario en un issue concreto cuya ID se ha indicado.
       consumes:
         - application/x-www-form-urlencoded
       parameters:
@@ -349,8 +351,8 @@ paths:
     get:
       tags:
         - Comments/id
-      summary: Consultar un comentario en especifico de un issue
-      description: Devuelve un comentario en especifico de un issue
+      summary: Consulta un comentario de un issue
+      description: Devuelve un comentario en especifico de un issue concretando su ID.
       produces:
         - application/json
       parameters:
@@ -376,8 +378,8 @@ paths:
     put:
       tags:
         - Comments/id
-      summary: Actualizar un comentario
-      description: Actualiza el comentario de un issue si eres el creador de ese comentario
+      summary: Actualiza un comentario
+      description: Si eres el creador del comentario con esa ID lo actualizas.
       consumes:
         - application/x-www-form-urlencoded
       produces:
@@ -420,7 +422,7 @@ paths:
       tags:
         - Comments/id
       summary: Elimina un comentario
-      description: Elimina el comentario de un issue si eres el creador de ese comentario
+      description: Si eres el creador del comentario indicado por la ID lo eliminas.
       produces:
         - application/json
       parameters:
@@ -506,8 +508,8 @@ paths:
     get:
       tags:
         - Attachments
-      summary: Obtiene un archivo de un issue
-      description: Obtiene un archivo adjunto aun issue
+      summary: Obtiene un attachment.
+      description: Obtiene un attachment asociado a un Issue concreto.
       produces:
         - application/json
       parameters:
@@ -528,8 +530,8 @@ paths:
     post:
       tags:
         - Attachments
-      summary: Adjuntar un archivo a un issue
-      description: Adjuntar un archivo a un issue
+      summary: Adjunta un archivo a un Issue.
+      description: Adjunta un archivo a un Issue.
       produces:
         - application/json
       consumes:
@@ -567,8 +569,8 @@ paths:
     get:
       tags:
         - Attachments
-      summary: Obtiene un archivo de un comentario
-      description: Obtiene un archivo de un comentario
+      summary: Obtiene un attachment de un comentario.
+      description: Obtiene un attachment de un comentario concreto.
       produces:
         - application/json
       parameters:
@@ -594,8 +596,8 @@ paths:
     post:
       tags:
         - Attachments
-      summary: Adjuntar archivo a un comentario
-      description: Adjuntar archivo a un comentario de un issue
+      summary: Adjunta un attachment a un comentario.
+      description: Adjunta un attachment a un comentario concreto.
       produces:
         - application/json
       consumes:
