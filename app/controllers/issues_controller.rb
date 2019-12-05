@@ -7,48 +7,10 @@ class IssuesController < ApplicationController
   # GET /issues
   # GET /issues.json
   def index
-    @issues = Issue.all.order(sort_column + ' ' + sort_direction)
-    @issues = @issues.where(Type: params[:Type]) if params[:Type]
-    @issues = @issues.where(Priority: params[:Priority]) if params[:Priority]
-    @issues = @issues.where(Status: params[:Status]) if params[:Status]
-
-
-    respond_to do |format|
-      
-      if params.has_key?(:assignee_id)
-        if User.exists?(id: params[:assignee_id])
-          @issues = @issues.where(assignee_id: params[:assignee_id])
-        else
-          format.json {render json: {"error":"User with id="+params[:assignee_id]+" does not exist"}, status: :unprocessable_entity}
-        end
-      end
-      
-      if params.has_key?(:type)
-        @issues = @issues.where(Type: params[:type])
-      end
-      
-      if params.has_key?(:priority)
-        @issues = @issues.where(Priority: params[:priority])
-      end
-      
-      if params.has_key?(:status)
-        if params[:status] == "New&Open"
-          @issues = @issues.where(Status: ["Open","New"])
-        else
-        @issues = @issues.where(Status: params[:status])
-        end
-      end
-
-      if params.has_key?(:watcher)
-        if User.exists?(id: params[:watcher])
-          @issues = Issue.joins(:watchers).where(watchers:{user_id: params[:watcher]})
-        else
-          format.json {render json: {"error":"User with id="+params[:watcher]+" does not exist"}, status: :unprocessable_entity}
-        end
-      end
-
+    @issues = Issue.all
+    respond to do |format|
       format.html
-      format.json {render json: @issues, status: :ok, each_serializer: IssueIndexSerializer}
+      format.json {render json: @issues, status: ok, each_serializer: IssueIndexSerializer}
     end
   end
 
