@@ -5,7 +5,7 @@ class Issue < ApplicationRecord
     has_many :votes, dependent: :destroy
     has_many :watchers, dependent: :destroy
     validates :Title, :Type, :Priority, :Status, presence: true
-    has_one_attached :adjunt
+    has_one_attached :Attachments
  
     def self.status
         ["New", "Open", "On hold", "Resolved", "Duplicate", "Invalid", "Won't fix", "Closed"]

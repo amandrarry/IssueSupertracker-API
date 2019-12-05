@@ -7,8 +7,10 @@
   <div>
     <p><strong> <%= User.find(@issue.user_id).name %> </strong> created an issue <small><font color="gray"><%= time_ago_in_words(@issue.created_at) + " ago" %></font></small></p>
     <p><%= @issue.Description %></p>
+    <p> <%= link_to 'View File', @issue.Attachments %>  </p>
   </div>
 </header>
+
 
 
 <div class = "contenedor">
@@ -80,7 +82,7 @@
 
 
             <button type="button" class="btn btn-light">
-              <span class="createi-button">                         <a href="#" data-toggle="modal" data-target="#attachmodal" class="show-button">Attach</a>
+              <span class="createi-button">                         <a href="/issues/<%= @issue.id %>/edit" data-toggle="modal" data-target="#attachmodal" class="show-button">Attach</a>
 
               </span>
             </button>
