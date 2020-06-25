@@ -27,7 +27,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'activerecord-session_store'
 #CORS
-gem 'rack-cors', '~> 0.3.1'
+gem 'rack-cors', '~> 1.0.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
