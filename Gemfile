@@ -68,7 +68,7 @@ gem 'devise'
 gem 'omniauth-google-oauth2'
 
 
-gem 'bootstrap-sass', '3.3.7'
+gem 'bootstrap-sass', '3.4.1'
 
 # Gem for attachments 
 gem "aws-sdk-s3", require: false
